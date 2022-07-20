@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#03 - Le côté dark | Codin'time</title>
+    <style>
+      .dark {
+        color: white !important;
+        background-color: #121212;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Quelques faux textes</h1>
+      <p>
+        Les deux hommes entourent David et le conduisent à la voiture, un
+        Espace, garé devant sa maison. Il se dit que ce serait bien si sa
+        voisine pouvait le voir comme ça, entouré de deux gardes du corps. Ça
+        fait pro. Et comme tous les matins, sa voisine Florence le regarde
+        partir, mais cette fois-ci entouré de deux gros gars baraqués, rasés au
+        plus près, menton et crâne. Un peu plus les pieds sur terre et surtout
+        plus réveillée, elle ne trouve pas cette scène très drôle. Il faudra
+        qu’elle vienne le voir ce soir, à son retour, pour lui demander de quoi
+        il s’agissait.
+      </p>
+
+      <p>
+        La journée commence. Il s’habille comme il peut tout en prenant son
+        café. Chemise blanche repassée la veille par lui-même. Une cravate comme
+        tous les jours. Et son costume noir de chez Sam Montiel, très chic et
+        très branché. Chaussures cuir noir. Comme il aime faire remarquer :
+        "Vous êtes soit dans vos chaussures, soit dans votre lit. Alors il faut
+        de bonnes chaussures et une bonne literie !". La météo a annoncé un ciel
+        bleu et des températures au-dessus de la normale saisonnière. C’est un
+        très beau mois de mai qui s’annonce.
+      </p>
+
+      <p>
+        L’ascenseur démarra tout seul après que la porte se soit fermée. Il
+        descendait. Il n’arrêtait pas de descendre. Puis, il s’arrêta enfin. La
+        porte s’ouvrit. Et David eut la stupeur de sa vie. Devant lui se
+        déployait un complexe informatique. Une vingtaine de personnes se
+        déplaçaient d’un poste à l’autre regardant au passage les écrans géants
+        muraux situés au fond de la salle. Il y avait bien une cinquantaine
+        d’ordinateurs, cinq écrans géants et, situé entre les écrans géants et
+        les ordinateurs, une machinerie impressionnante.
+      </p>
+    </div>
+    <div>
+      <button>Basculer en mode dark</button>
+    </div>
+    <script>
+      const body = document.body;
+      const button = document.getElementsByTagName("button")[0];
+
+      button.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        button.innerHTML === "Basculer en mode dark"
+          ? (button.innerHTML = "Basculer en mode light")
+          : (button.innerHTML = "Basculer en mode dark");
+      });
+    </script>
+  </body>
+</html>

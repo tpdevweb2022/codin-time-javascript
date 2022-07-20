@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#02 - Nombre de lettres ! | Codin'time</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" name="query" id="inputQuery" />
+      <button id="buttonVerify">Vérifier</button>
+    </div>
+    <div>
+      <p>Nombre de lettres : <span id="result"></span></p>
+    </div>
+    <script>
+      const resultSpan = document.getElementById("result");
+      const buttonVerify = document.getElementById("buttonVerify");
+      const inputQuery = document.getElementById("inputQuery");
+
+      buttonVerify.addEventListener("click", () => {
+        result.innerHTML = inputQuery.value.length;
+      });
+    </script>
+  </body>
+</html>

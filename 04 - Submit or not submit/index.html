@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04 - Submit or not submit - Codin'time</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div>
+        <label for="job">Profession</label>
+        <input type="text" name="job" id="job" />
+      </div>
+      <div id="error"></div>
+      <button id="submit_btn">Soumettre</button>
+    </form>
+    <script>
+      const form = document.getElementsByTagName("form")[0];
+      const pseudo = document.getElementById("pseudo");
+      const email = document.getElementById("email");
+      const job = document.getElementById("job");
+      const errorZone = document.getElementById("error");
+      const submitBtn = document.getElementById("submit_btn");
+
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (pseudo.value === "" || pseudo.value === "undefined") {
+          errorZone.innerHTML = "La case pseudo doit être remplie";
+          return;
+        }
+        if (email.value === "" || email.value === "undefined") {
+          errorZone.innerHTML = "La case email doit être remplie";
+          return;
+        }
+        // SI mon email saisi n'inclut pas @ ou s'il n'inclut pas un point .
+        if (!email.value.includes("@") || !email.value.includes(".")) {
+          errorZone.innerHTML = "L'email n'est pas de type email";
+          return;
+        }
+        if (email.value.toLowerCase().includes("mondomaine.com")) {
+          errorZone.innerHTML =
+            "L'email ne peut etre composé de @mondomaine.com";
+          return;
+        }
+        if (job.value === "" || job.value === "undefined") {
+          errorZone.innerHTML = "La case job doit être remplie";
+          return;
+        }
+        errorZone.innerHTML = "";
+        form.submit();
+      });
+    </script>
+  </body>
+</html>
